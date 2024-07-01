@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{DF755A7B-028A-4E08-9BB7-538E782A02ED}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ApplicationController</RootNamespace>
+    <AssemblyName>ApplicationController</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>True</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Project\ApplicationController.cs" />
+    <Compile Include="Project\ViewPage1\AControl1.cs" />
+    <Compile Include="Project\ViewPage1\Control1.cs" />
+    <Compile Include="Project\ViewPage1\Control1.Designer.cs">
+      <DependentUpon>Control1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\ViewPage1\IViewPage1.cs" />
+    <Compile Include="Project\ViewPage2\AControl2.cs" />
+    <Compile Include="Project\ViewPage2\Control2.cs" />
+    <Compile Include="Project\ViewPage2\Control2.Designer.cs">
+      <DependentUpon>Control2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\ViewPage2\IViewPage2.cs" />
+    <Compile Include="Project\ViewPage3\AControl3.cs" />
+    <Compile Include="Project\ViewPage3\Control3.cs" />
+    <Compile Include="Project\ViewPage3\Control3.Designer.cs">
+      <DependentUpon>Control3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\ViewMain\AFormMain.cs" />
+    <Compile Include="Project\ViewMain\FormMain.cs" />
+    <Compile Include="Project\ViewMain\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\ViewPage3\IViewPage3.cs" />
+    <Compile Include="Project\ViewStart\AFormStart.cs" />
+    <Compile Include="Project\ViewStart\FormStart.cs" />
+    <Compile Include="Project\ViewStart\FormStart.Designer.cs">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\ViewStart\IViewStart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Project" />
+    <Folder Include="Project\ViewStart" />
+    <Folder Include="Project\ViewMain" />
+    <Folder Include="Project\ViewPage3" />
+    <Folder Include="Project\ViewPage2" />
+    <Folder Include="Project\ViewPage1" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Project\ViewPage1\Control1.resx">
+      <DependentUpon>Control1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\ViewPage2\Control2.resx">
+      <DependentUpon>Control2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\ViewPage3\Control3.resx">
+      <DependentUpon>Control3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\ViewMain\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\ViewStart\FormStart.resx">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
